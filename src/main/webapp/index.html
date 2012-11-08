@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta name="generator" content="HTML Tidy, see www.w3.org">
+    <meta charset="utf-8">
+
+    <title>Lift Numberguess example</title>
+  </head>
+
+  <body>
+
+    <h1>Make a guess</h1>
+
+    <p>The secret number is between 1 and 100. What's your guess?</p>
+
+    <form method="POST" class="lift:Game">
+      <span label-for="guess">Guess:</span> 
+      <input type="number" name="guess"> 
+      <input type="submit" value="Go">
+    </form>
+
+    <div class="lift:Msgs?showAll=true"/>
+  </body>
+</html>
+
