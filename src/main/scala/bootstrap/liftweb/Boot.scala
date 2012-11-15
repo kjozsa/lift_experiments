@@ -42,6 +42,7 @@ class Boot {
 
     def sitemap() = SiteMap(
       Menu("welcome") / "index",
-      Menu("number guess!") / "numberguess")
+      Menu("number guess!") / "numberguess",
+      Menu("screen example") / "screen")
   }
 }
