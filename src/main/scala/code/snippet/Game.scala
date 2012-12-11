@@ -7,12 +7,10 @@ import net.liftweb.http.SHtml
 import net.liftweb.http.StatefulSnippet
 import net.liftweb.util.Helpers.asInt
 import net.liftweb.util.Helpers.strToCssBindPromoter
-import net.liftweb.http.SessionVar
-import net.liftweb.common.Loggable
 
 class Game extends StatefulSnippet {
   private val origin = "/numberguess"
-  private val secret = 1 + random * 100 toInt
+  private val secret = (1 + random * 100).toInt
   private var guess = ""
   private var count = 0
 

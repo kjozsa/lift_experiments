@@ -6,3 +6,5 @@ target/
 .classpath
 *swp
 
+.idea
+.idea_modules

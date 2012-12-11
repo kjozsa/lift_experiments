@@ -1,15 +1,9 @@
 package bootstrap.liftweb
 
 import net.liftweb._
-import util._
-import Helpers._
 import common._
 import http._
 import sitemap._
-import Loc._
-import net.liftmodules.JQueryModule
-import net.liftweb.http.js.jquery._
-import mapper._
 import net.liftweb.squerylrecord.SquerylRecord
 import org.squeryl.adapters.H2Adapter
 import org.squeryl.Session
@@ -17,13 +11,14 @@ import java.sql.DriverManager
 import net.liftweb.common.Logger
 import code.model.Database
 import org.squeryl.PrimitiveTypeMode._
+import util.LoanWrapper
 
 /**
  * A class that's instantiated early and run.  It allows the application
  * to modify lift's environment
  */
 class Boot extends Logger {
-  def boot {
+  def boot() {
     // where to search snippet
     LiftRules.addToPackages("code")
 
@@ -41,27 +36,35 @@ class Boot extends Logger {
 
     LiftRules.setSiteMapFunc(MenuInfo.sitemap)
 
-    setupDB
+    setupDB()
   }
 
-  def setupDB {
-    Class.forName("org.h2.Driver");
+  def setupDB() {
+    Class.forName("org.h2.Driver")
     SquerylRecord.initWithSquerylSession(Session.create(
-      DriverManager.getConnection("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1", "sa", ""), new H2Adapter))
+      DriverManager.getConnection("jdbc:h2:file:/tmp/liftexp;AUTO_SERVER=TRUE;MODE=Oracle;DB_CLOSE_DELAY=-1", "", ""), new H2Adapter))
 
     transaction {
       Database.drop
       Database.printDdl
       Database.create
     }
+
+    S.addAround(new LoanWrapper{
+      override def apply[T](f: => T): T = {
+        inTransaction{
+          f
+        }
+      }
+    })
   }
 
   object MenuInfo {
-    import Loc._
-
     def sitemap() = SiteMap(
       Menu("welcome") / "index",
       Menu("number guess!") / "numberguess",
-      Menu("screen example") / "screen")
+      Menu("screen example") / "screen",
+      Menu("db1 aa") / "db")
   }
+
 }
