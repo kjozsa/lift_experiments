@@ -15,9 +15,9 @@ object DB1 extends PaginatorSnippet[Company] {
   def render =
     SHtml.idMemoize(outer =>
 
-      "li" #> page.map(company => {
+      "li" #> page.map(company =>
         "ul" #> company.name.toString
-      }) &
+      ) &
 
         ".createRecord [onclick]" #> ajaxInvoke(() => {
           val ftl = Company.createRecord.name("FTL Development " + randomInt(100))
