@@ -42,7 +42,7 @@ class Boot extends Logger {
   def setupDB() {
     Class.forName("org.h2.Driver")
     SquerylRecord.initWithSquerylSession(Session.create(
-      DriverManager.getConnection("jdbc:h2:file:/tmp/liftexp;AUTO_SERVER=TRUE;MODE=Oracle;DB_CLOSE_DELAY=-1", "", ""), new H2Adapter))
+      DriverManager.getConnection("jdbc:h2:mem:liftexp;MODE=Oracle;DB_CLOSE_DELAY=-1", "", ""), new H2Adapter))
 
     transaction {
       Database.drop
