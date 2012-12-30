@@ -1,6 +1,6 @@
 import com.typesafe.sbt.SbtStartScript 
 
-name := "Lift 2.5 Numberguess example"
+name := "Lift Experiments"
 
 version := "0.0.1"
 
