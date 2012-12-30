@@ -10,7 +10,7 @@ import code.model.Database
 import org.squeryl.PrimitiveTypeMode._
 
 
-object DB1 extends PaginatorSnippet[Company] {
+object DBCrud extends PaginatorSnippet[Company] {
 
   def render =
     SHtml.idMemoize(outer =>

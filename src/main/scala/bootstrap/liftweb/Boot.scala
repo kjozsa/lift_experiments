@@ -64,7 +64,7 @@ class Boot extends Logger {
       Menu("welcome") / "index",
       Menu("number guess!") / "numberguess",
       Menu("screen example") / "screen",
-      Menu("db1 aa") / "db")
+      Menu("db crud") / "dbcrud")
   }
 
 }
