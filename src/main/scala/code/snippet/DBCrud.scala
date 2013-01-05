@@ -1,7 +1,7 @@
 package code.snippet
 
 import net.liftweb._
-import http.{PaginatorSnippet, SHtml}
+import http.{S, PaginatorSnippet, SHtml}
 import util._
 import Helpers._
 import net.liftweb.http.SHtml._
@@ -11,6 +11,8 @@ import org.squeryl.PrimitiveTypeMode._
 
 
 object DBCrud extends PaginatorSnippet[Company] {
+
+  val originalUri = S.uri
 
   def render =
     SHtml.idMemoize(outer =>
@@ -32,6 +34,8 @@ object DBCrud extends PaginatorSnippet[Company] {
   def count: Long = Database.companies.size
 
   def page: Seq[Company] = Database.companies.slice(first.toInt, first.toInt + itemsPerPage).toSeq
+
+  override def pageUrl(offset: Long): String = appendParams(originalUri, List(offsetParam -> offset.toString))
 
 }
 
