@@ -50,7 +50,7 @@ class Boot extends Logger {
       Database.create
     }
 
-    S.addAround(new LoanWrapper{s
+    S.addAround(new LoanWrapper{
       override def apply[T](f: => T): T = {
         inTransaction{
           f
@@ -65,6 +65,7 @@ class Boot extends Logger {
       Menu("number guess!") / "numberguess",
       Menu("screen example") / "screen",
       Menu("db crud") / "dbcrud",
+      Menu("ajax") / "ajax"
     )
   }
 
