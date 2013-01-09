@@ -12,7 +12,6 @@ import org.squeryl.PrimitiveTypeMode._
 
 object DBCrud extends PaginatorSnippet[Company] {
 
-  val originalUri = S.uri
 
   def render =
     SHtml.idMemoize(outer =>
@@ -35,7 +34,10 @@ object DBCrud extends PaginatorSnippet[Company] {
 
   def page: Seq[Company] = Database.companies.slice(first.toInt, first.toInt + itemsPerPage).toSeq
 
-  override def pageUrl(offset: Long): String = appendParams(originalUri, List(offsetParam -> offset.toString))
+  override def pageUrl(offset: Long): String = {
+    val originalUri: String = S.originalRequest.map(_.uri).openOr("/")
+    appendParams(originalUri, List(offsetParam -> offset.toString))
+  }
 
 }
 
