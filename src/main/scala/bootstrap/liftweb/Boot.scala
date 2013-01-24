@@ -66,7 +66,10 @@ class Boot extends Logger {
       Menu("screen example") / "screen",
       Menu("db crud") / "dbcrud",
       Menu("ajax") / "ajax",
-    Menu("i18n") / "i18n"
+      Menu("i18n") / "i18n",
+      Menu("submenus") / "submenus" submenus(
+        Menu("first") / "sub/subfirst"
+        )
     )
   }
 
