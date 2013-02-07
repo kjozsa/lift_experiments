@@ -11,13 +11,14 @@ import java.sql.DriverManager
 import net.liftweb.common.Logger
 import code.model.Database
 import org.squeryl.PrimitiveTypeMode._
-import util.LoanWrapper
+import util.{Props, LoanWrapper}
 
 /**
  * A class that's instantiated early and run.  It allows the application
  * to modify lift's environment
  */
 class Boot extends Logger {
+
   def boot() {
     // where to search snippet
     LiftRules.addToPackages("code")
@@ -37,6 +38,7 @@ class Boot extends Logger {
     LiftRules.setSiteMapFunc(MenuInfo.sitemap)
 
     setupDB()
+    startH2Console()
   }
 
   def setupDB() {
@@ -50,13 +52,25 @@ class Boot extends Logger {
       Database.create
     }
 
-    S.addAround(new LoanWrapper{
+    S.addAround(new LoanWrapper {
       override def apply[T](f: => T): T = {
-        inTransaction{
+        inTransaction {
           f
         }
       }
     })
+  }
+
+  def startH2Console() {
+    if (Props.devMode || Props.testMode) {
+      LiftRules.liftRequest.append({
+        case r if (r.path.partPath match {
+          case "console" :: _ => true
+          case _ => false
+        }
+          ) => false
+      })
+    }
   }
 
   object MenuInfo {
@@ -67,7 +81,7 @@ class Boot extends Logger {
       Menu("db crud") / "dbcrud",
       Menu("ajax") / "ajax",
       Menu("i18n") / "i18n",
-      Menu("submenus") / "submenus" submenus(
+      Menu("submenus") / "submenus" submenus (
         Menu("first") / "sub/subfirst"
         )
     )
