@@ -15,20 +15,21 @@ object DBCrud extends PaginatorSnippet[Company] {
 
   def render =
     SHtml.idMemoize(outer =>
-      ClearClearable &
+      ".hasRecords" #> (if (count == 0) ClearNodes else PassThru) andThen
 
         ".companies *" #> page.map(company =>
           ".company-name *" #> company.name.toString
         ) &
 
-        ".hasRecords" #> (if (count == 0) ClearNodes else PassThru) &
 
-        ".createRecord [onclick]" #> ajaxInvoke(() => {
-          val ftl = Company.createRecord.name("FTL Development " + randomInt(100))
-          Database.companies.insert(ftl)
+          ".createRecord [onclick]" #> ajaxInvoke(() => {
+            val ftl = Company.createRecord.name("FTL Development " + randomInt(100))
+            Database.companies.insert(ftl)
 
-          outer.setHtml
-        })
+            outer.setHtml
+          }) &
+
+          ClearClearable
     )
 
   override def itemsPerPage = 2
