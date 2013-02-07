@@ -4,23 +4,27 @@
     <div data-lift="DBCrud">
         <a class="createRecord">create some records</a>
 
-        <p>currrent records:</p>
+        <div class="hasRecords">
+            <p>currrent records:</p>
 
-        <table style="width:100%">
-            <tr class="companies">
-                <td>name</td>
-                <td class="company-name">company name comes here</td>
-            </tr>
-            <tr class="clearable">
-                <td>name</td>
-                <td>other company name</td>
-            </tr>
-        </table>
+            <table style="width:100%">
+                <tr class="companies">
+                    <td>name</td>
+                    <td class="company-name">company name comes here</td>
+                </tr>
+                <tr class="clearable">
+                    <td>name</td>
+                    <td>other company name</td>
+                </tr>
+            </table>
 
-        <br/>
+            <br/>
 
-        <div data-lift="DBCrud.paginate">
-            <nav:first></nav:first><nav:allpages></nav:allpages><nav:last></nav:last>
+            <div data-lift="DBCrud.paginate">
+                <nav:first></nav:first>
+                <nav:allpages></nav:allpages>
+                <nav:last></nav:last>
+            </div>
         </div>
     </div>
 </div>
