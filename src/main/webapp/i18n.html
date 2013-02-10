@@ -4,8 +4,11 @@
     <div data-lift="Localize">
         <span id="span1">hello</span>
 
+        <br>
+        localized from template: <lift:loc locid="hello">Default Text</lift:loc>
+
         <form>
-            <input type="submit" value="go"></input>
+            <input type="submit" value="hello" data-lift="AttributeLocalizer.value"></input>
         </form>
     </div>
 </div>
