@@ -14,7 +14,7 @@ object AttributeLocalizer extends DispatchSnippet {
 
   def inject(ns: NodeSeq): NodeSeq = ns match {
     case Elem(prefix, label, attribs, scope, child@_*) =>
-      Elem(prefix, label, attribs, scope, S.loc(ns.text, Text(ns.text)): _*)
+      Elem(prefix, label, attribs, scope, false, S.loc(ns.text, Text(ns.text)): _*)
     case _ => ns
   }
 
@@ -22,7 +22,7 @@ object AttributeLocalizer extends DispatchSnippet {
 
   def attr(ns: NodeSeq, attrName: String) = ns match {
     case Elem(prefix, label, attribs, scope, child@_*) =>
-      Elem(prefix, label, locAttrib(attribs, attrName), scope, child: _*)
+      Elem(prefix, label, locAttrib(attribs, attrName), scope, false, child: _*)
     case _ => ns
   }
 
