@@ -21,7 +21,10 @@ object DBCrud extends PaginatorSnippet[Company] {
 
         ".companies *" #> page.map(company =>
           ".company-name *" #> company.name.toString &
-          ".delete *" #> ajaxButton(Text("delete"), () => Alert("removed "+company.name))
+          ".delete *" #> ajaxButton(Text("delete"), () => {
+            Database.companies.delete(company.id)
+            Alert("removed "+company.name) & outer.setHtml
+          })
         ) &
 
 
