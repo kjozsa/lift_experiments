@@ -11,6 +11,7 @@ import java.sql.DriverManager
 import net.liftweb.common.Logger
 import code.model.Database
 import org.squeryl.PrimitiveTypeMode._
+import sitemap.Loc.Hidden
 import util.{Props, LoanWrapper}
 
 /**
@@ -79,6 +80,7 @@ class Boot extends Logger {
       Menu("number guess!") / "numberguess",
       Menu("screen example") / "screen",
       Menu("db crud") / "dbcrud",
+      Menu("dbedit") / "dbedit" >> Hidden,
       Menu("ajax") / "ajax",
       Menu("i18n") / "i18n",
       Menu("submenus") / "submenus" submenus (
