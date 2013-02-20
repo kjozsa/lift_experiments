@@ -19,12 +19,11 @@ seq(SbtStartScript.startScriptForClassesSettings: _*)
 scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
 
 libraryDependencies ++= {
-  val liftVersion = "2.5-SNAPSHOT"
+  val liftVersion = "3.0-SNAPSHOT"
   Seq(
     "net.liftweb"       %% "lift-webkit"        % liftVersion        % "compile",
     "net.liftweb"       %% "lift-mapper"        % liftVersion        % "compile",
     "net.liftweb"       %% "lift-squeryl-record"        % liftVersion        % "compile",
-    "net.liftmodules"   %% "lift-jquery-module" % (liftVersion + "-2.1-SNAPSHOT"),
     "org.eclipse.jetty" % "jetty-webapp"        % "8.1.8.v20121106"  % "container,test,compile",
     "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" % "container,test" artifacts Artifact("javax.servlet", "jar", "jar"),
     "ch.qos.logback"    % "logback-classic"     % "1.0.9",
