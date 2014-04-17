@@ -1,36 +1,32 @@
 <!DOCTYPE html>
-
 <html lang="en">
-  <head>
+<head>
     <meta name="generator" content="HTML Tidy, see www.w3.org">
     <meta charset="utf-8">
 
     <title>Lift experiments</title>
-    <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link type="text/css" href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-    <link type="text/css" href="css/main.css" rel="stylesheet" media="screen">
-	
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-  </head>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-  <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <div class="brand">Lift Experiments</div>
-          <div class="lift:Menu.builder?ul:class=nav&li_item:class=active"/>
-        </div>
-      </div>
-    </div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
 
-    <div class="container">
-      <div id="content"></div>
-    
-  	  <div class="lift:Msgs">
-	    <lift:notice_class>alert alert-info</lift:notice_class>
-	  </div>
+<body>
+<nav class="navbar navbar-default navbar-inverse">
+    <div class="navbar-brand">Lift Experiments</div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="lift:Menu.builder?ul:class=nav+navbar-nav&li_item:class=active&linkToSelf=true"/>
     </div>
-  </body>
+</nav>
+
+<div class="container">
+    <div id="content"></div>
+
+    <div class="lift:Msgs">
+        <lift:notice_class>alert alert-info</lift:notice_class>
+    </div>
+</div>
+</body>
 </html>
 
