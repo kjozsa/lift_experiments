@@ -3,11 +3,11 @@
 
     <p>The secret number is between 1 and 100. What's your guess?</p>
 
-    <form method="POST" data-lift="Game" class="input-append">
-    	<fieldset>
-			<label for="guess">Guess:</label> 
-			<input type="number" name="guess">
-			<button type="submit" class="btn">Go</button>
-		</fieldset>
+    <form method="POST" data-lift="Game" class="input-group col-lg-4">
+        <label class="input-group-addon">Guess:</label>
+        <input type="number" name="guess" class="form-control" placeholder="Enter a number">
+        <span class="input-group-btn">
+        <button type="submit" class="btn btn-default">Go</button>
+        </span>
     </form>
 </div>

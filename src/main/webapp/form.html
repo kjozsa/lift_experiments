@@ -1,15 +1,26 @@
 <div data-lift="surround?with=default&at=content">
     <h1>Manual (non-screen) form</h1>
 
-    <form data-lift="Form?form=post">
-        Name:
-        <input type="text" name="name">
+    <form data-lift="Form?form=post" class="col-xs-6">
+        <div class="form-group">
+            <label class="control-label col-xs-2">Name</label>
 
-        <br>
-        Date:
-        <input type="date" name="date">
-        <br>
+            <div class="col-xs-10">
+                <input class="form-control" type="text" id="name" name="name">
+            </div>
+        </div>
 
-        <input type="submit" value="go">
+        <div class="form-group">
+            <label class="control-label col-xs-2">Date</label>
+
+            <div class="col-xs-10">
+                <input class="form-control" type="date" name="date">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-offset-2 col-xs-10">
+                <input type="submit" value="go and do something" class="btn btn-default">
+            </div>
+        </div>
     </form>
 </div>
