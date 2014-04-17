@@ -21,7 +21,7 @@ libraryDependencies ++= {
     "net.liftweb"       %% "lift-mapper"        % liftVersion        % "compile",
     "net.liftweb"       %% "lift-squeryl-record"        % liftVersion        % "compile",
     "org.eclipse.jetty" % "jetty-webapp"        % "9.2.0.M0"  % "container,test,compile",
-    "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" % "container,test" artifacts Artifact("javax.servlet", "jar", "jar"),
+    "javax.servlet"     % "javax.servlet-api"   % "3.0.1"     % "provided",
     "ch.qos.logback"    % "logback-classic"     % "1.1.2",
     "com.h2database" % "h2" % "1.3.176"
   )
