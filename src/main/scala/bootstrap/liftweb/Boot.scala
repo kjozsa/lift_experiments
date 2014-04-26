@@ -85,6 +85,7 @@ class Boot extends Logger {
       Menu("dbedit") / "dbedit" >> Hidden,
       Menu("ajax") / "ajax",
       Menu("i18n") / "i18n",
+      Menu("discounts") / "discounts",
       Menu("submenus") / "submenus" submenus (
         Menu("first") / "sub/subfirst"
         )

@@ -1,0 +1,32 @@
+<div data-lift="surround?with=default&at=content" class="container col-xs-6">
+    <h1>The Discounts example</h1>
+    <h4><em>sample taken from a recent project</em></h4>
+
+    <div class="panel panel-default">
+        <div class="panel-heading"><h4>product discounts</h4></div>
+        <div class="panel-body">
+
+            <div data-lift="Discounts.renderProducts" class="panel-body">
+                <div class="productDiscount form-inline">
+                    <select class="product form-control"></select>
+                    <input class="discount form-control" type="number">
+                    <a class="delete form-control btn btn-danger btn-sm">delete</a>
+                </div>
+                <a id="newProductDiscount" class="btn btn-primary">+ add new product discount</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading"><h4>options discounts</h4></div>
+        <div class="panel-body">
+
+            <div data-lift="Discounts.renderOptions" class="panel-body">
+                <div class="productDiscount form-inline">
+                    <select class="product form-control"></select>
+                    <input class="discount form-control" type="number">
+                    <a class="delete form-control btn btn-danger btn-sm">delete</a>
+                </div>
+                <a id="newProductDiscount" class="btn btn-primary">+ add new option discount</a>
+            </div>
+        </div>
+    </div>
