@@ -86,6 +86,7 @@ class Boot extends Logger {
       Menu("ajax") / "ajax",
       Menu("i18n") / "i18n",
       Menu("discounts") / "discounts",
+      Menu("pwchange") / "pwchange",
       Menu("submenus") / "submenus" submenus (
         Menu("first") / "sub/subfirst"
         )

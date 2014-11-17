@@ -10,7 +10,7 @@ resolvers ++= Seq("snapshots"     at "http://oss.sonatype.org/content/repositori
                 "releases"        at "http://oss.sonatype.org/content/repositories/releases"
                 )
 
-seq(webSettings :_*)
+jetty()
 
 scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
 
