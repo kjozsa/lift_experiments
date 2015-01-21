@@ -15,7 +15,7 @@
     <logger name="code.snippet" level="info" />
     <logger name="bootstrap.liftweb" level="debug" />
 
-    <logger name="org.eclipse.jetty" level="debug" />
+    <logger name="org.eclipse.jetty" level="info" />
     <logger name="net.liftweb" level="debug" />
 
     <root level="debug">
