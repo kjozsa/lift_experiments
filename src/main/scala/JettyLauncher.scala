@@ -1,9 +1,9 @@
-import org.eclipse.jetty.server.Server
-
-import org.eclipse.jetty.servlet.{DefaultServlet, ServletContextHandler}
-import net.liftweb.http.LiftFilter
 import java.util.EnumSet
 import javax.servlet.DispatcherType
+
+import net.liftweb.http.LiftFilter
+import org.eclipse.jetty.server.Server
+import org.eclipse.jetty.servlet.{DefaultServlet, ServletContextHandler}
 import org.h2.server.web.WebServlet
 
 object JettyLauncher extends App {
@@ -16,7 +16,6 @@ object JettyLauncher extends App {
   context.addServlet(classOf[WebServlet], "/console/*")
 
   context.addFilter(classOf[LiftFilter], "/*", EnumSet.of(DispatcherType.REQUEST))
-  context.setResourceBase("src/main/webapp")
 
   server.start
   server.join

@@ -12,6 +12,8 @@ resolvers ++= Seq("snapshots"     at "http://oss.sonatype.org/content/repositori
 
 jetty()
 
+unmanagedResourceDirectories in Compile += { baseDirectory.value / "src/main/webapp" }
+
 oneJarSettings
 
 scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
