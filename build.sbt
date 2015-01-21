@@ -4,7 +4,7 @@ version := "0.0.1"
 
 organization := "net.liftweb"
 
-scalaVersion := "2.10.4"
+scalaVersion := "2.11.5"
 
 resolvers ++= Seq("snapshots"     at "http://oss.sonatype.org/content/repositories/snapshots",
                 "releases"        at "http://oss.sonatype.org/content/repositories/releases"
@@ -12,10 +12,12 @@ resolvers ++= Seq("snapshots"     at "http://oss.sonatype.org/content/repositori
 
 jetty()
 
+oneJarSettings
+
 scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
 
 libraryDependencies ++= {
-  val liftVersion = "2.6-M3"
+  val liftVersion = "2.6"
   Seq(
     "net.liftweb"       %% "lift-webkit"        % liftVersion        % "compile",
     "net.liftweb"       %% "lift-mapper"        % liftVersion        % "compile",
