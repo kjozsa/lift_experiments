@@ -1,0 +1,13 @@
+{
+	"AWSEBDockerrunVersion": "1",
+	"Image": {
+		"Name": "kjozsa/liftexp1",
+		"Update": "true"
+	},
+	"Ports": [
+		{
+			"ContainerPort": "8080"
+		}
+	]
+}
+
