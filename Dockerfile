@@ -12,4 +12,4 @@ WORKDIR /home/lifter
 
 ADD target/scala-2.11/lift-experiments_2.11-0.0.1-one-jar.jar /home/lifter/app.jar
 
-ENTRYPOINT ["/usr/bin/java", "-jar", "/home/lifter/app.jar"]
+CMD ["/usr/bin/java", "-jar", "/home/lifter/app.jar"]
